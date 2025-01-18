@@ -48,7 +48,7 @@ const AuthForm = () => {
           email: field.email,
           password: field.password,
         });
-        if (user) router.push("/dashboard");
+        if (user) router.push(`/dashboard/${user.$id}`);
       } else {
         // For registration
         const user = await createUser({
@@ -57,7 +57,7 @@ const AuthForm = () => {
           password: field.password,
           phone: field.phone,
         });
-        if (user) router.push("/dashboard");
+        if (user) router.push(`/dashboard/${user.$id}`);
       }
     } catch (error) {
       console.log(error);
